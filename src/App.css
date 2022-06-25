@@ -1,6 +1,9 @@
 .App {
   text-align: center;
 }
+.hr {
+  border: 2px solod blue;
+}
 
 .App-logo {
   height: 40vmin;

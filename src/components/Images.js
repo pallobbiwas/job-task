@@ -4,8 +4,8 @@ const Images = ({ data }) => {
   const { img, discription, name, Img1, Img2, Img3 } = data;
 
   const [isTreue, setTrue] = useState(false);
+  const [isHover, setHover] = useState(false);
 
-  console.log(isTreue);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2">
@@ -49,7 +49,10 @@ const Images = ({ data }) => {
             class="mask mask-star-2 bg-green-500"
           />
           <div>
-            <button className="btn btn-success mx-6 btn-sm">
+            <button
+              onClick={() => setHover(!isHover)}
+              className="btn btn-success mx-6 btn-sm"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -86,6 +89,9 @@ const Images = ({ data }) => {
                 />
               </svg>
             </button>
+            <div className={isHover? "block": 'hidden'}>
+                <p className="text-blue-600 cursor-pointer"><span>facebook</span><span className="mx-4">youtube</span><span>Linkedin</span></p>
+            </div>
           </div>
         </div>
       </div>
